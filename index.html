@@ -83,7 +83,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="codeForFun.png" alt=""></p>
+        <p><img src="codeForFunBlack.png" alt=""></p>
 <p>Hi students, welcome to the lesson page for Intro to Python at Code for Fun!</p>
 <p>These lessons are intended to be used as a follow-up after each week’s in-class lesson. So Lesson 1 covers the same topics as the 1st week’s class, Lesson 2 covers the same topics of the 2nd week’s class, and so on….</p>
 <p>Each lesson will be posted online after the in-class lesson. I recommend taking just 1 hour out of your week to go over these online lessons, so that you can refresh your programming knowledge. </p>
@@ -108,7 +108,76 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://PythonCourses.github.io/2017/01/18/Welcome/" data-id="ciydmxilv0001ap3vpvc0lfhb" class="article-share-link">Share</a>
+      <a data-url="http://PythonCourses.github.io/2017/01/18/Welcome/" data-id="ciyjc3kih0002xv3v6oombh6g" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Lesson-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/30/Lesson-2/" class="article-date">
+  <time datetime="2016-12-30T22:40:07.000Z" itemprop="datePublished">12-30-2016</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/30/Lesson-2/">Lesson 2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Now we are going to be working with turtles. Not the green animals with the shells, but a python <strong> module </strong> called Turtle.<br>Modules allow us to use cool features that are not part of python’s standard library. The Tutrle module will allow us to draw cool shapes on our screens. </p>
+<p>We are going to be: </p>
+<ol>
+<li><strong> Importing the Turtle module to draw on our screens </strong></li>
+<li><strong> Using if statements to conditionally execute code </strong></li>
+<li><strong> Using for loops to execute a piece of code a specific number of times </strong></li>
+</ol>
+<h2 id="Turtle-Time"><a href="#Turtle-Time" class="headerlink" title="Turtle Time"></a>Turtle Time</h2><h3 id="2-1-Bringing-up-the-Canvas"><a href="#2-1-Bringing-up-the-Canvas" class="headerlink" title="2-1 Bringing up the Canvas"></a>2-1 Bringing up the Canvas</h3><p>To begin, let’s just bring the turtle on to the screen. We make the turtle by assigning a variable t to the return of the turtle module’s Pen function.<br>t is a black arrow that starts off facing right on the canvas. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import turtle</div><div class="line">t = turtle.Pen()</div><div class="line"></div></pre></td></tr></table></figure>
+<p><img src="2-1.png" alt="Turtle on the Canvas"></p>
+<h3 id="2-2-I-like-to-move-it-move-it"><a href="#2-2-I-like-to-move-it-move-it" class="headerlink" title="2-2 I like to move it, move it!"></a>2-2 I like to move it, move it!</h3><p>Now lets make the turtle move. We can do so using functions that are included in the turtle module. Specifically, the <strong> forward </strong> function moves t the specified number of pixels forward. So writing <strong>t.forward(50) </strong> will move our turtle 50 pixels in the direction that it is facing. The <strong> left() </strong> function will rotate the turtle by the specified number of degrees to the left. So writing <strong>t.left(90)</strong> will rotate our turtle to the left by 90 degrees.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import turtle </div><div class="line"></div><div class="line">t = turtle.Pen()</div><div class="line"></div><div class="line">t.forward(50)</div><div class="line">t.left(90)</div><div class="line">t.forward(50)</div><div class="line">t.left(90)</div><div class="line">t.forward(50)</div><div class="line">t.left(90)</div><div class="line">t.forward(50)</div><div class="line">t.left(90)</div><div class="line"></div></pre></td></tr></table></figure>
+<p><img src="2-2.gif" alt="Drawing a square"></p>
+<h3 id="2-3-Repetition-using-For-loops"><a href="#2-3-Repetition-using-For-loops" class="headerlink" title="2-3 Repetition using For loops"></a>2-3 Repetition using For loops</h3><p>Making a square was pretty simple, but the code we used pretty repetitive. Four times, we had to tell the turtle to move forward, then turn left. So instead of listing off all of these commands repeatedly, we can use a <strong>for loop</strong>. A for loop tells a block of code to execute a certain number of times. In our case, we want to execute the move forward - turn left command 4 times. A for loop to execute something y number of times, looks like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">for x in range(0,y)</div></pre></td></tr></table></figure>
+<p>So to make our square using a for loop, we can change our code to look like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import turtle </div><div class="line"></div><div class="line">t = turtle.Pen()</div><div class="line"></div><div class="line">for x in range(0,4):</div><div class="line">	t.forward(50)</div><div class="line">	t.left(90)</div></pre></td></tr></table></figure>
+<h3 id="2-4-If-Statements"><a href="#2-4-If-Statements" class="headerlink" title="2-4 If Statements"></a>2-4 If Statements</h3><p>Sometimes we only want to execute code based on a certain condition. This is whre <strong>If Statement</strong> can be very useful. A basic If statement will check a condition, and if it is true, then it will execute the code in its code block. Lets try a simple example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">age = 13</div><div class="line"></div><div class="line">if age &lt; 17:</div><div class="line">	print(&quot;You can&apos;t watch rated R movies!&quot;)</div></pre></td></tr></table></figure>
+<p>This code will not execute as is, but try changing the value we assigned to the age variable, to an age of 17 or higher!</p>
+<h3 id="2-5-Elif-Statements"><a href="#2-5-Elif-Statements" class="headerlink" title="2-5 Elif Statements"></a>2-5 Elif Statements</h3><p><strong>Elif statements</strong> are added after an If Statement and only execute when the preceding If-statement is false. Try out the following code to see how it works. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">age = 25</div><div class="line"></div><div class="line">if age &lt; 17:</div><div class="line">	print(&quot;Dont watch rated R movies!&quot;)</div><div class="line"></div><div class="line">elif age &lt; 35:</div><div class="line">	print(&quot;You can watch rated R movies, but you are not old enough to run for president&quot;)</div></pre></td></tr></table></figure>
+<h3 id="2-6-Else-Statements"><a href="#2-6-Else-Statements" class="headerlink" title="2-6 Else Statements"></a>2-6 Else Statements</h3><p><strong>Else statements</strong> will execute when the preceding if statement and elif stements fails. It is the last condition checked in the If-Elif-Else chain. Try out the following code to see the use of Else statements. Change the age value to test out which stements are executed.  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">age = 25</div><div class="line"></div><div class="line">if age &lt; 17:</div><div class="line">	print(&quot;Dont watch rated R movies!&quot;)</div><div class="line"></div><div class="line">elif age &lt; 35:</div><div class="line">	print(&quot;You can watch rated R movies, but you are not old enough to run for president&quot;)</div><div class="line"></div><div class="line">else:  </div><div class="line">	print(&quot;You can watch rated R movies and run for president!&quot;)</div></pre></td></tr></table></figure>
+<h3 id="2-7-Using-If-Elif-Else-Statements-to-enhance-our-Turtle"><a href="#2-7-Using-If-Elif-Else-Statements-to-enhance-our-Turtle" class="headerlink" title="2-7 Using If-Elif-Else Statements to enhance our Turtle"></a>2-7 Using If-Elif-Else Statements to enhance our Turtle</h3><p>If-Elif-Else statments can be used for far more than simply checking what you are legally allowed to do. We can use it to customize our turtle drawing! Lets go back to the code from lesson 2-3, where we use a for loop to make a square. Remember hoe we crafted our <strong> for loo </strong> to execute four times: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">for x in range(0,4)</div></pre></td></tr></table></figure>
+<p>You might be wondering about the x in the for loop. this is called the <strong> iterator </strong> and for each execution of the loop, the iterator increases by 1. So in this case it starts at 0 and increases by 1 until it gets to 3. We can check the value of the iterator at each loop, to do something specific for each loop. </p>
+<p>Specifically, I want to change the color of our turtle at each stage in the loop. We can use an <strong> If-Elif-Else </strong> statement to check the value of the iterator, and specify the color based on the value. </p>
+<p>The first line of the square I want to be blue, the second line of the square I want to be yellow, the third line of the square I want to be red, and the fourth and final line of the square I want to be green.<br><strong><br>Line 1 : Blue<br>Line 2 : Yellow<br>Line 3 : Red<br>Line 4 : Green
+</strong></p>
+<p>So I am going to modify the code from 2-3 to include an <strong> If-Elif-Else</strong> statment that specifies these colors based on the value of the iterator. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">import turtle </div><div class="line"></div><div class="line">t = turtle.Pen()</div><div class="line"></div><div class="line">for x in range(0,4):</div><div class="line">	</div><div class="line">	if x == 0:</div><div class="line">		t.color(&quot;blue&quot;)</div><div class="line">	elif x == 1:</div><div class="line">		t.color(&quot;yellow&quot;)</div><div class="line">	elif x == 2:</div><div class="line">		t.color(&quot;red&quot;)</div><div class="line">	else:</div><div class="line">		t.color(&quot;green&quot;)</div><div class="line"></div><div class="line">	t.forward(50)</div><div class="line">	t.left(90)</div></pre></td></tr></table></figure>
+<p><img src="2-7square.gif" alt="Drawing a COLORFUL square"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-2/" data-id="ciyjc3kie0001xv3vri9jklvr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-1/" data-id="ciydmxil50000ap3vjlcq15lb" class="article-share-link">Share</a>
+      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-1/" data-id="ciyjc3ki80000xv3vut7gideq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,6 +290,10 @@
         
           <li>
             <a href="/2017/01/18/Welcome/">Welcome!</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/30/Lesson-2/">Lesson 2</a>
           </li>
         
           <li>
