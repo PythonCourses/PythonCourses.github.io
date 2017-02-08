@@ -108,7 +108,62 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://PythonCourses.github.io/2017/01/18/Welcome/" data-id="ciyjc3kih0002xv3v6oombh6g" class="article-share-link">Share</a>
+      <a data-url="http://PythonCourses.github.io/2017/01/18/Welcome/" data-id="ciyw9vx7g0003rf3vt8r9t65r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Lesson-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/17/Lesson-3/" class="article-date">
+  <time datetime="2017-01-18T01:23:50.000Z" itemprop="datePublished">01-17-2017</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/17/Lesson-3/">Lesson-3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This lesson will cover:</p>
+<ol>
+<li>The <strong>modulus operator</strong>, which we will use to determine if a number is even or odd</li>
+<li><strong>While loops</strong></li>
+<li>Creating our own basic <strong>functions</strong>, as well as functions that have <strong>paramaters</strong> and <strong>return values</strong></li>
+</ol>
+<h2 id="Modulus-Operator"><a href="#Modulus-Operator" class="headerlink" title="Modulus Operator"></a>Modulus Operator</h2><h3 id="3-1-What-the-modulus-operator-does"><a href="#3-1-What-the-modulus-operator-does" class="headerlink" title="3-1 What the modulus operator does"></a>3-1 What the modulus operator does</h3><p>The <strong>modulus operator</strong> is a little weird, very simple, and suprisingly useful. When used between two Ints, it returns the remainder from the division of the left Int over the right Int. Lets try a basic modulus operation. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">remainder = 13 % 5</div><div class="line">print(remainder)</div></pre></td></tr></table></figure>
+<p>Because 13 goes in to 5 twice, with a remainder of 3, we see that 13 % 5 is 3. </p>
+<h3 id="3-2-Determining-if-an-Int-is-odd-or-even"><a href="#3-2-Determining-if-an-Int-is-odd-or-even" class="headerlink" title="3-2 Determining if an Int is odd or even"></a>3-2 Determining if an Int is odd or even</h3><p>An even Int is a Int when divided by 2, has no remainder. While an odd Int will have a remainder of 1. So we can use the modulus operator and en if/else statment, to determine if a Int is even or odd. Lets allow our program to take a Int from the user, then tell the user if the Int is even or odd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">print(&quot;Give me a number&quot;)</div><div class="line">num = int(input())</div><div class="line"></div><div class="line">if (num %2 == 0):</div><div class="line">	print(&quot;Your number is even&quot;)</div><div class="line">else:</div><div class="line">	print(&quot;Your number is odd&quot;)</div><div class="line"></div></pre></td></tr></table></figure>
+<h2 id="While-Loops"><a href="#While-Loops" class="headerlink" title="While Loops"></a>While Loops</h2><h3 id="3-3-How-While-Loops-work"><a href="#3-3-How-While-Loops-work" class="headerlink" title="3-3 How While Loops work"></a>3-3 How While Loops work</h3><p><strong>While loops</strong> are loops that execute while a given condition is true. They are useful if we want to repeteadley execute a block of code, until a value has changed. Lets take a look at a simple while loop </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">num = 0</div><div class="line"></div><div class="line">while num &lt; 10:</div><div class="line">	print(num)</div><div class="line">	num = num + 1</div></pre></td></tr></table></figure>
+<p>The num starts at 0, and each time it goes through the loop, it increases by 1. It does this <strong>while</strong> num is less than 10. So once it hits ten, the loop stops. </p>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><p>Functions are simply blocks of code that we can execute anywhere in our program. It allows us to break our program up in to tasks, so when we want to accomplish the task, we can simply call the function. </p>
+<h3 id="3-4-A-Simple-Function"><a href="#3-4-A-Simple-Function" class="headerlink" title="3-4: A Simple Function"></a>3-4: A Simple Function</h3><p>Lets start of with a basic function. We create functions using the <strong> def </strong> keyword, followed by the function name, then parenthesis, then a colon. We then indent. When we indent, we are putting the indenting code into a <strong> block </strong>. In this case, everything in the this block, which is just the print command, is part of the function.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">def sayHello():</div><div class="line">	print(&quot;Hello&quot;)</div><div class="line"></div><div class="line">sayHello()</div></pre></td></tr></table></figure></p>
+<h3 id="3-5-Function-Paramaters"><a href="#3-5-Function-Paramaters" class="headerlink" title="3-5: Function Paramaters"></a>3-5: Function Paramaters</h3><p>The sayHello() function is nice, but it just does the same thing every time… kinda boring :/.<br>What if we want the function to do something diferent based on some data that we give it?<br>Easy! That’s what <strong> paramaters </strong> are for. For example, we can create a function that gives us the square of a number. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">def squareNumber(number):</div><div class="line">	square = number * number</div><div class="line">	print(square)</div><div class="line"></div><div class="line">squareNumber(1)</div><div class="line">squareNumber(2)</div><div class="line">squareNumber(3)</div><div class="line">squareNumber(4)</div><div class="line">squareNumber(5)</div></pre></td></tr></table></figure>
+<h3 id="3-6-Function-Return-Values"><a href="#3-6-Function-Return-Values" class="headerlink" title="3-6: Function Return Values"></a>3-6: Function Return Values</h3><p>It’s cool that we can get functions to do all of this work for us, but it would be nice to store the result of these functions in a variable.<br>That’s where <strong>return values </strong> are handy. We can tell the function to return something to us, and we can assign a variable to it. So lets do this using the squared number example. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">def squareNumber(number):</div><div class="line">	square = number * number</div><div class="line">	return square</div><div class="line"></div><div class="line">number = 5</div><div class="line">square = squareNumber(number)</div><div class="line"></div><div class="line">result = str(number) + &quot; squared is equal to &quot; + str(square)</div><div class="line">print(result)</div><div class="line"></div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://PythonCourses.github.io/2017/01/17/Lesson-3/" data-id="ciyw9vx750001rf3v3v0w9qsu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-2/" data-id="ciyjc3kie0001xv3vri9jklvr" class="article-share-link">Share</a>
+      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-2/" data-id="ciyw9vx7b0002rf3vb7wp1jp6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-1/" data-id="ciyjc3ki80000xv3vut7gideq" class="article-share-link">Share</a>
+      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-1/" data-id="ciyw9vx6w0000rf3v48awqvqc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -290,6 +345,10 @@
         
           <li>
             <a href="/2017/01/18/Welcome/">Welcome!</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Lesson-3/">Lesson-3</a>
           </li>
         
           <li>
