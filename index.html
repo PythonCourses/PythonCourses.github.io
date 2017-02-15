@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://PythonCourses.github.io"></form>
@@ -108,7 +108,64 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://PythonCourses.github.io/2017/01/18/Welcome/" data-id="ciyw9vx7g0003rf3vt8r9t65r" class="article-share-link">Share</a>
+      <a data-url="http://PythonCourses.github.io/2017/01/18/Welcome/" data-id="ciz54cguc00046f3vouq5im3i" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Lesson-4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/17/Lesson-4/" class="article-date">
+  <time datetime="2017-01-18T02:23:50.000Z" itemprop="datePublished">01-17-2017</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/17/Lesson-4/">Lesson-4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This lesson will cover:</p>
+<ol>
+<li>Object oriented programming using <strong>classes</strong> and **objects</li>
+<li>Defining and implementing <strong>attributes</strong> for a class</li>
+<li>Defining and implementing <strong>methods</strong> for a class </li>
+</ol>
+<h2 id="Our-First-Class"><a href="#Our-First-Class" class="headerlink" title="Our First Class"></a>Our First Class</h2><h3 id="4-1-Structure-of-a-Class"><a href="#4-1-Structure-of-a-Class" class="headerlink" title="4-1 Structure of a Class"></a>4-1 Structure of a Class</h3><p>A class is defined using the class keyword, then followed by the class name that starts with a capital leter. The attributes of a class are defined in the <strong><strong>init</strong></strong> function. So let’s create a basic class called Smith, a person who has the following attributes:</p>
+<ul>
+<li>lastName</li>
+<li>age </li>
+<li>firstName</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class Smith:</div><div class="line">    def __init__(self):</div><div class="line">        self.lastName = &apos;Smith&apos;</div><div class="line">        self.age = 0</div><div class="line">        self.firstName = &apos;&apos;</div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="4-2-Defining-a-Class-Method"><a href="#4-2-Defining-a-Class-Method" class="headerlink" title="4-2 Defining a Class Method"></a>4-2 Defining a Class Method</h3><p>So far, our class Smith has all of the attributes we need, but we also want to be able to do something with this data. This is where <strong>methods</strong> come in handy. <strong>Methods</strong> are functions that are specific to a class, and therefore have access to the attributes of that class. So, lets give the Smith class the ability to print out its name, by defining a method sayName. Also, because the firstName attribute is initialized empty, lets create a method to change the firstName attribute, called setName(), that takse in a name paramater</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">class Smith:</div><div class="line">    def __init__(self):</div><div class="line">        self.lastName = &apos;Smith&apos;</div><div class="line">        self.age = 0</div><div class="line">        self.firstName = &apos;&apos;</div><div class="line">        </div><div class="line">    def setFirstName(self, firstName):</div><div class="line">    	self.firstName = firstName</div><div class="line"></div><div class="line">    def sayName(self):</div><div class="line">        print (&quot;My name is&quot; , self.firstName , self.lastName)</div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="4-3-Creating-an-object-from-a-Class"><a href="#4-3-Creating-an-object-from-a-Class" class="headerlink" title="4-3 Creating an object from a Class"></a>4-3 Creating an object from a Class</h3><p>Classes are frameworks to create objects from. Essentially, we can create as many Smith objects that we want, which all have the lastName, age, and firstName attributes and the setFirstName() and sayName() methods. So lets create our first Smith object using the initializer.Then change its firstName using the setFirstName() method. And finally, say its name using the sayName() method. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class Smith:</div><div class="line">    def __init__(self):</div><div class="line">        self.lastName = &apos;Smith&apos;</div><div class="line">        self.age = 0</div><div class="line">        self.firstName = &apos;&apos;</div><div class="line">        </div><div class="line">    def setFirstName(self, firstName):</div><div class="line">    	self.firstName = firstName</div><div class="line"></div><div class="line">    def sayName(self):</div><div class="line">        print (&quot;My name is&quot; , self.firstName , self.lastName)</div><div class="line">        </div><div class="line">johnSmith = Smith()</div><div class="line">johnSmith.setFirstName(&apos;John&apos;)</div><div class="line">johnSmith.sayName()</div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="4-4-More-methods…"><a href="#4-4-More-methods…" class="headerlink" title="4-4 More methods…"></a>4-4 More methods…</h3><p>Right now, our Smith objects never get older than 0 years old, they are infinitely babies…Lets change that! We are going to create a method called haveBirthday() that increases the age by 1. Also, we need a sayAge() function, so we can see how old the Smith object is. We are going to call the haveBirthdayMethod() 18 times using a for loop. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">class Smith:</div><div class="line">    def __init__(self):</div><div class="line">        self.lastName = &apos;Smith&apos;</div><div class="line">        self.age = 0</div><div class="line">        self.firstName = &apos;&apos;</div><div class="line">        </div><div class="line">    def setFirstName(self, firstName):</div><div class="line">    	self.firstName = firstName</div><div class="line"></div><div class="line">    def sayName(self):</div><div class="line">        print (&quot;My name is&quot; , self.firstName , self.lastName)</div><div class="line"></div><div class="line">    def haveBirthday(self):</div><div class="line">    	self.age = self.age + 1</div><div class="line"></div><div class="line">    def sayAge(self):</div><div class="line">    	print(&quot;I am&quot; , self.age, &quot;years old&quot;)</div><div class="line"></div><div class="line">        </div><div class="line">johnSmith = Smith()</div><div class="line"></div><div class="line">for x in range(0,18):</div><div class="line">	johnSmith.haveBirthday()</div><div class="line"></div><div class="line">johnSmith.sayAge()</div><div class="line"></div></pre></td></tr></table></figure>
+<h3 id="4-5-Multiple-Objects"><a href="#4-5-Multiple-Objects" class="headerlink" title="4-5 Multiple Objects"></a>4-5 Multiple Objects</h3><p>One of the key characteristics of classes, is the ability to create multiple objects from the class. So, lets try creating multiple Smith objects (each with a different first name and number of birthdays).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">class Smith:</div><div class="line">    def __init__(self):</div><div class="line">        self.lastName = &apos;Smith&apos;</div><div class="line">        self.age = 0</div><div class="line">        self.firstName = &apos;&apos;</div><div class="line">        </div><div class="line">    def setFirstName(self, firstName):</div><div class="line">    	self.firstName = firstName</div><div class="line"></div><div class="line">    def sayName(self):</div><div class="line">        print (&quot;My name is&quot; , self.firstName , self.lastName)</div><div class="line"></div><div class="line">    def haveBirthday(self):</div><div class="line">    	self.age = self.age + 1</div><div class="line"></div><div class="line">    def sayAge(self):</div><div class="line">    	print(&quot;I am&quot; , self.age, &quot;years old&quot;)</div><div class="line"></div><div class="line">        </div><div class="line">johnSmith = Smith()</div><div class="line">johnSmith.setFirstName(&apos;John&apos;)</div><div class="line"></div><div class="line">janeSmith = Smith()</div><div class="line">janeSmith.setFirstName(&apos;Jane&apos;)</div><div class="line"></div><div class="line">for x in range(0,18):</div><div class="line">	johnSmith.haveBirthday()</div><div class="line"></div><div class="line">for x in range(0,12):</div><div class="line">	janeSmith.haveBirthday()</div><div class="line"></div><div class="line">johnSmith.sayName()</div><div class="line">johnSmith.sayAge()</div><div class="line"></div><div class="line">janeSmith.sayName()</div><div class="line">janeSmith.sayAge()</div><div class="line"></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://PythonCourses.github.io/2017/01/17/Lesson-4/" data-id="ciz54cgu900036f3vbew8ma0l" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -163,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://PythonCourses.github.io/2017/01/17/Lesson-3/" data-id="ciyw9vx750001rf3v3v0w9qsu" class="article-share-link">Share</a>
+      <a data-url="http://PythonCourses.github.io/2017/01/17/Lesson-3/" data-id="ciz54cgu600026f3v74olxxf3" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -232,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-2/" data-id="ciyw9vx7b0002rf3vb7wp1jp6" class="article-share-link">Share</a>
+      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-2/" data-id="ciz54cgu300016f3vr7zxrs5p" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -304,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-1/" data-id="ciyw9vx6w0000rf3v48awqvqc" class="article-share-link">Share</a>
+      <a data-url="http://PythonCourses.github.io/2016/12/30/Lesson-1/" data-id="ciz54cgtn00006f3vkhsvgc91" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -339,12 +396,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
             <a href="/2017/01/18/Welcome/">Welcome!</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Lesson-4/">Lesson-4</a>
           </li>
         
           <li>
@@ -372,7 +433,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Pat Mulloy - Code For Fun<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
