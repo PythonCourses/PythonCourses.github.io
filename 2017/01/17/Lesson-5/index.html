@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Lesson 5 | Code For Fun - Python Courses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This lesson is all about using python to draw shapes onto a canvas. A canvas is simply a highly customizable, empty screen that we can draw shapes on. And eventually, we will have these shapes move ac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lesson 5">
+<meta property="og:url" content="http://PythonCourses.github.io/2017/01/17/Lesson-5/index.html">
+<meta property="og:site_name" content="Code For Fun - Python Courses">
+<meta property="og:description" content="This lesson is all about using python to draw shapes onto a canvas. A canvas is simply a highly customizable, empty screen that we can draw shapes on. And eventually, we will have these shapes move ac">
+<meta property="og:image" content="http://PythonCourses.github.io/5-1.png">
+<meta property="og:image" content="http://PythonCourses.github.io/5-2.png">
+<meta property="og:image" content="http://PythonCourses.github.io/5-3.png">
+<meta property="og:image" content="http://PythonCourses.github.io/5-4.jpg">
+<meta property="og:updated_time" content="2017-02-22T04:16:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lesson 5">
+<meta name="twitter:description" content="This lesson is all about using python to draw shapes onto a canvas. A canvas is simply a highly customizable, empty screen that we can draw shapes on. And eventually, we will have these shapes move ac">
+<meta name="twitter:image" content="http://PythonCourses.github.io/5-1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Code For Fun - Python Courses" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Code For Fun - Python Courses</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://PythonCourses.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Lesson-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/17/Lesson-5/" class="article-date">
+  <time datetime="2017-01-18T03:23:50.000Z" itemprop="datePublished">01-17-2017</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Lesson 5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This lesson is all about using python to draw shapes onto a <strong>canvas</strong>. A <strong>canvas</strong> is simply a highly customizable, empty screen that we can draw shapes on. And eventually, we will have these shapes move across the screen to create our game!</p>
+<p>We are going to be: </p>
+<ol>
+<li><strong> Crating a canvas on our computer screen </strong></li>
+<li><strong> Using Canvas methods to create a variety of shapes  </strong></li>
+<li><strong> Understanding how numerical values represent positions on the canvas </strong></li>
+</ol>
+<h2 id="Drawing-with-Python"><a href="#Drawing-with-Python" class="headerlink" title="Drawing with Python"></a>Drawing with Python</h2><h3 id="5-1-Bringing-up-the-Canvas"><a href="#5-1-Bringing-up-the-Canvas" class="headerlink" title="5-1 Bringing up the Canvas"></a>5-1 Bringing up the Canvas</h3><p>The first step to drawing in Python is creating something to draw on, this is the <strong>canvas</strong>. We can create a canvas fromt the Tkinter module. First, we create a tk object, which gives us access to all of the Tkinter methods. Then, we create a canvas by giving the Canvas() method our tk object, a width, and a height. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">from tkinter import *</div><div class="line"></div><div class="line">tk = Tk()</div><div class="line"></div><div class="line">canvas = Canvas(tk, width = 600, height = 400)</div><div class="line"></div><div class="line">canvas.pack()</div></pre></td></tr></table></figure>
+<p>Running this program should bring up an empty canvas that is 600 pixels wide and 400 pixels tall. </p>
+<h3 id="How-Pixels-are-represented-with-Points"><a href="#How-Pixels-are-represented-with-Points" class="headerlink" title="How Pixels are represented with Points"></a>How Pixels are represented with Points</h3><p><img src="5-1.png" alt="Corners of a Canvas"></p>
+<p>Take a look at the image above. In order to capture positions on the canvas, we must understand how the position is represented using points. A <strong>Point</strong> is a combination of an x-value and a y-value. The <strong>x-value</strong> represents the horizonal point (how far right the point it is), and the <strong>y-value</strong> represents the vertical point (how far down the point is). So, the top left corner has an x-value of 0 and a y-value of 0, so the point is (0,0). Moving right from this corner will increase the x-value, and moving down from this corner will increase the y-value. The highest possible x-value is 600, because the canvas is 600 pixels wide, and the highest y-value is 400, because the canvas is 400 pixals tall. </p>
+<h3 id="5-2-Drawing-our-first-shape"><a href="#5-2-Drawing-our-first-shape" class="headerlink" title="5-2 Drawing our first shape."></a>5-2 Drawing our first shape.</h3><p>The simplest shape we can start with is a line. we can create a line by givving the create_line() method two paramaters, the first point and the second point. The method will then draw a line from the first point to the second point. We need to call the create_line() method after we create our canvas, but before we call canvas.pack(). Lets make the first point (10,10) and the second point (50,100). So the line will be in the top left of our canvas.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">from tkinter import *</div><div class="line"></div><div class="line">tk = Tk()</div><div class="line"></div><div class="line">canvas = Canvas(tk, width = 600, height = 400)</div><div class="line"></div><div class="line">canvas.create_line(10,10, 50,100)</div><div class="line"></div><div class="line">canvas.pack()</div></pre></td></tr></table></figure>
+<p><img src="5-2.png" alt="Drawing a Line"></p>
+<h3 id="5-3-Drawing-a-rectangle"><a href="#5-3-Drawing-a-rectangle" class="headerlink" title="5-3 Drawing a rectangle"></a>5-3 Drawing a rectangle</h3><p>Lets make another shape. The next simplest shape we can draw is a rectangle. Just like the create_line() method, we need to give the create_rectangle()two points; the top left point and the top right point. Also, we can optionally give the create_rectangle() method a “fill” paramater, which takes in a color, to fill the rectangle with. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">from tkinter import *</div><div class="line"></div><div class="line">tk = Tk()</div><div class="line"></div><div class="line">canvas = Canvas(tk, width = 600, height = 400)</div><div class="line"></div><div class="line">canvas.create_line(10,10,50,100)</div><div class="line">canvas.create_rectangle(100,100,200,150,fill = &apos;red&apos;)</div><div class="line"></div><div class="line">canvas.pack()</div></pre></td></tr></table></figure>
+<p><img src="5-3.png" alt="Drawing a Rectangle"></p>
+<h3 id="5-3-Draw-all-the-shapes"><a href="#5-3-Draw-all-the-shapes" class="headerlink" title="5-3 Draw all the shapes!!!!"></a>5-3 Draw all the shapes!!!!</h3><p>Use the document below to create your own shapes. Create your own custom polygons with different outline and fill colors, create a text object on the screen, or create an oval that touches each side of the canvas! Use your creativity!</p>
+<p><img src="5-4.jpg" alt="Shape Drawing Methods"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://PythonCourses.github.io/2017/01/17/Lesson-5/" data-id="cizep6chl0003n63vj7ajf10e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/18/Welcome/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Welcome!
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/17/Lesson-4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Lesson 4</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/18/Welcome/">Welcome!</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Lesson-5/">Lesson 5</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Lesson-4/">Lesson 4</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Lesson-3/">Lesson 3</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/30/Lesson-2/">Lesson 2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Pat Mulloy - Code For Fun<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
