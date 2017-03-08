@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Lesson-7 | Code For Fun - Python Courses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="In this lesson, we will create a controllable rectangle called a Paddle, that will move from side to side, and is controllable using the arrow keys. This Paddle will function similar to the paddle in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lesson-7">
+<meta property="og:url" content="http://PythonCourses.github.io/2017/01/17/Lesson-7/index.html">
+<meta property="og:site_name" content="Code For Fun - Python Courses">
+<meta property="og:description" content="In this lesson, we will create a controllable rectangle called a Paddle, that will move from side to side, and is controllable using the arrow keys. This Paddle will function similar to the paddle in">
+<meta property="og:image" content="http://PythonCourses.github.io/7-2.jpg">
+<meta property="og:image" content="http://PythonCourses.github.io/7-3.gif">
+<meta property="og:updated_time" content="2017-03-08T03:37:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lesson-7">
+<meta name="twitter:description" content="In this lesson, we will create a controllable rectangle called a Paddle, that will move from side to side, and is controllable using the arrow keys. This Paddle will function similar to the paddle in">
+<meta name="twitter:image" content="http://PythonCourses.github.io/7-2.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Code For Fun - Python Courses" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Code For Fun - Python Courses</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://PythonCourses.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Lesson-7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/17/Lesson-7/" class="article-date">
+  <time datetime="2017-01-18T04:23:50.000Z" itemprop="datePublished">01-17-2017</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Lesson-7
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In this lesson, we will create a controllable rectangle called a Paddle, that will move from side to side, and is controllable using the arrow keys. This Paddle will function similar to the paddle in brick breaker. </p>
+<p>We are going to be: </p>
+<ol>
+<li><strong> Crating a canvas on our computer screen </strong></li>
+<li><strong> Creating a “Paddle” class to provide attributes and functionality to the Paddle. </strong></li>
+<li><strong> Using Canvas methods to create the Paddle’s shape </strong></li>
+<li><strong> Use </strong>key-binding<strong> to attach key press to the Paddle’s method </strong></li>
+</ol>
+<h2 id="It’s-Paddle-Time"><a href="#It’s-Paddle-Time" class="headerlink" title="It’s Paddle Time"></a>It’s Paddle Time</h2><h3 id="7-1-Bringing-up-the-Canvas"><a href="#7-1-Bringing-up-the-Canvas" class="headerlink" title="7-1 Bringing up the Canvas"></a>7-1 Bringing up the Canvas</h3><p>Before we create our Paddle class, let’s make sure we can bring up the canvas, so that we can draw our Paddle on to it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">from tkinter import *</div><div class="line"></div><div class="line">tk = Tk()</div><div class="line">canvas = Canvas(tk, width = 1000, height = 800)</div><div class="line">canvas.pack()</div></pre></td></tr></table></figure>
+<p>Running this program should bring up an empty canvas that is 1000 pixels wide and 800 pixels tall. </p>
+<h3 id="7-2-Creating-the-Paddle-Class"><a href="#7-2-Creating-the-Paddle-Class" class="headerlink" title="7-2 Creating the Paddle Class"></a>7-2 Creating the Paddle Class</h3><p>Creating a class for our Paddle will give us control over its attriubutes (like its size and speed), and its methods (like its ability to move left and right). So lets start by creating an init function that creates an canvasm idm abd xSpeed attribute. The canvas attribute will tell the the Paddle which canvas to appear on (which will be the empty canvas we made). The id attribute will be the rectangle shape itself. And the xSpeed will be the speed of the paddle (…once we get it moving). This code should simply make the paddle appear on the screen. </p>
+<p><strong>Note: </strong> Pay attention to the coordinates that we give the create_rectangle() function. These coordinates puts the rectangle in the bottom, middle of the screen. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">from tkinter import *</div><div class="line"></div><div class="line">class Paddle:</div><div class="line"></div><div class="line">    def __init__(self, canvas):</div><div class="line">        self.canvas = canvas</div><div class="line">        self.id = canvas.create_rectangle(500,775,700,800, fill = &quot;black&quot;)</div><div class="line">        self.xSpeed = 3</div><div class="line"></div><div class="line">    def draw(self):</div><div class="line">        #Use self.canvas.move to change the x position of self.id by the self.xSpeed</div><div class="line">        self.canvas.move(self.id,self.xSpeed,0)</div><div class="line">        position = self.canvas.coords(self.id)</div><div class="line"></div><div class="line">        #check collision with wall        </div><div class="line">        if position[0] &lt;= 0:</div><div class="line">            self.xSpeed = -self.xSpeed</div><div class="line">        if position[2] &gt;= self.canvas.winfo_width():</div><div class="line">            self.xSpeed = -self.xSpeed</div><div class="line"></div><div class="line">tk = Tk()</div><div class="line">canvas = Canvas(tk, width = 1000, height = 800)</div><div class="line">canvas.pack()</div><div class="line"></div><div class="line">paddle = Paddle(canvas)</div><div class="line"></div></pre></td></tr></table></figure>
+<p><img src="7-2.jpg" alt="Getting the Paddle on Canvas"></p>
+<h3 id="7-3-Moving-the-Paddle"><a href="#7-3-Moving-the-Paddle" class="headerlink" title="7-3 Moving the Paddle"></a>7-3 Moving the Paddle</h3><p>To move the paddle, we need to do a few things. First we need to import time at the top of the file, so we can create an animation loop. Next, we must create a draw() method in the Paddle class, that draws moves the Paddle by xSpeed pixels. this draw() method will also check the far left and far right coordinates of the paddle, and if the far left coordinate is less than 0, we know the paddle has hit the left side of the canvas, so we must reverse the direction to make it bounce. If the far right coordinate of the paddle is greater than the canvis width, than we must also reverse the direction here.<br>Finally, we must create the animation loop which draws the paddle, updates the canvas, and sleeps the program for .01 seconds. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">from tkinter import *</div><div class="line">import time</div><div class="line"></div><div class="line">class Paddle:</div><div class="line"></div><div class="line">    def __init__(self, canvas):</div><div class="line">        self.canvas = canvas</div><div class="line">        self.id = canvas.create_rectangle(500,775,700,800, fill = &quot;black&quot;)</div><div class="line">        self.xSpeed = 3</div><div class="line"></div><div class="line">    def draw(self):</div><div class="line">        #Use self.canvas.move to change the x position of self.id by the self.xSpeed</div><div class="line">        self.canvas.move(self.id,self.xSpeed,0)</div><div class="line">        position = self.canvas.coords(self.id)</div><div class="line"></div><div class="line">        #check collision with wall        </div><div class="line">        if position[0] &lt;= 0:</div><div class="line">            self.xSpeed = -self.xSpeed</div><div class="line">        if position[2] &gt;= self.canvas.winfo_width():</div><div class="line">            self.xSpeed = -self.xSpeed</div><div class="line"></div><div class="line">tk = Tk()</div><div class="line">canvas = Canvas(tk, width = 1000, height = 800)</div><div class="line">canvas.pack()</div><div class="line"></div><div class="line">paddle = Paddle(canvas)</div><div class="line"></div><div class="line">#animation loop</div><div class="line">while 1:</div><div class="line">    paddle.draw()</div><div class="line">    tk.update()</div><div class="line">    time.sleep(0.01)</div><div class="line"></div></pre></td></tr></table></figure>
+<p><img src="7-3.gif" alt="Moving Paddle"></p>
+<h3 id="7-4-Controlling-the-Paddle"><a href="#7-4-Controlling-the-Paddle" class="headerlink" title="7-4 Controlling the Paddle"></a>7-4 Controlling the Paddle</h3><p>It’s cool that the Paddle is moving, but it would be a whole lot cooler if we could control the Paddle someway. Luckily, there is an easy way to do this; it’s called <strong>key-binding</strong>. Key binding simply assigns a function or method to a key on the keyboard. In this case, we will tell the left key to change the Paddle’s xSpeed attribute to -3, and the right key will change the Paddle’s xSpeed attribute to 3. We will accomplish this binding in the Paddle’s init method.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">from tkinter import *</div><div class="line">import time</div><div class="line"></div><div class="line">class Paddle:</div><div class="line"></div><div class="line">    def __init__(self, canvas):</div><div class="line">        self.canvas = canvas</div><div class="line">        self.id = canvas.create_rectangle(500,775,700,800, fill = &quot;black&quot;)</div><div class="line">        self.xSpeed = 3</div><div class="line"></div><div class="line">        tk.bind(&quot;&lt;Left&gt;&quot;, self.leftKeyPress)</div><div class="line">        tk.bind(&quot;&lt;Right&gt;&quot;, self.rightKeyPress)</div><div class="line"></div><div class="line">    def leftKeyPress(self,event):</div><div class="line">        self.xSpeed = -3</div><div class="line">                      </div><div class="line">    def rightKeyPress(self,event):</div><div class="line">        self.xSpeed = 3</div><div class="line"></div><div class="line">    def draw(self):</div><div class="line">        #Use self.canvas.move to change the x position of self.id by the self.xSpeed</div><div class="line">        self.canvas.move(self.id,self.xSpeed,0)</div><div class="line">        position = self.canvas.coords(self.id)</div><div class="line"></div><div class="line">        #check collision with wall        </div><div class="line">        if position[0] &lt;= 0:</div><div class="line">            self.xSpeed = -self.xSpeed</div><div class="line">        if position[2] &gt;= self.canvas.winfo_width():</div><div class="line">            self.xSpeed = -self.xSpeed</div><div class="line"></div><div class="line">tk = Tk()</div><div class="line">canvas = Canvas(tk, width = 1000, height = 800)</div><div class="line">canvas.pack()</div><div class="line"></div><div class="line">paddle = Paddle(canvas)</div><div class="line"></div><div class="line">#animation loop</div><div class="line">while 1:</div><div class="line">    paddle.draw()</div><div class="line">    tk.update()</div><div class="line">    time.sleep(0.01)</div><div class="line"></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://PythonCourses.github.io/2017/01/17/Lesson-7/" data-id="cj00eyzcq0003zeqsq6jqrndp" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/18/Welcome/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Welcome!
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/17/Lesson-5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Lesson 5</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/18/Welcome/">Welcome!</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Lesson-7/">Lesson-7</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Lesson-5/">Lesson 5</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Lesson-4/">Lesson 4</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/17/Lesson-3/">Lesson 3</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Pat Mulloy - Code For Fun<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
